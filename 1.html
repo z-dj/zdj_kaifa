@@ -6,14 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <button>click me</button>
     <script>
-        const oButton = document.querySelector('button')
-        const callback = function(e){
-            console.log(`${e.target}`)
-            e.preventDefault();
-        }    
-        oButton.addEventListener('click',callback)
+        const callback = function() {
+            console.log('hello,timeout'); //最后执行
+        }
+        //三秒钟之后执行
+        let a = setTimeout(callback,3000);  //异步，在所有同步执行之后再执行异步
+        console.log('同步执行！');  //先执行
+        console.log(a);    
+        //清除
+        clearTimeout(a);
+
+        let b = setInterval(callback,3000);  //异步
     </script>
 </body>
 </html>
