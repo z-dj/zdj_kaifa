@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <title>焦点事件示例</title>
+    <style>
+        .bgc{
+        background-color: blue;
+        }
+    </style>
+  
+</head>
+<body>
+    <form action="#">
+        <input type="text"/>
+    </form>
+    <script>
+        const oInput = document.querySelector('input')
+        oInput.addEventListener('focus',(e)=>{
+            oInput.classList.add('bgc')
+        })
+
+        oInput.addEventListener('blur',(e)=>{
+            oInput.classList.remove('bgc')
+        })
+
+    </script>
+</body>
+</html>
